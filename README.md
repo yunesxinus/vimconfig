@@ -19,6 +19,7 @@ because some plugins may not work in Vim
 ## You can find my config at init.vim file
 the config file for neovim is at ~/.config/nvim/init.vim. you can get more info with :help nvim-configuration from your neovim instance.
 if it is not just create it (directory and file)
+i suggest useing a nerdfont
 ### PS: You can also use Vim extension for vscode and use this config
 
 Thank you for reading
