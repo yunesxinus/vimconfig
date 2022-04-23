@@ -23,7 +23,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-;> <C-w>l
 
 
-call plug#begin('C:\Users\Acer\AppData\Local\nvim\plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'turbio/bracey.vim'
 Plug 'vim-airline/vim-airline-themes'
@@ -37,12 +37,12 @@ Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-" Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
+Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'dracula/vim'
 " Plug 'mattn/vim-fz'
 " Plug 'https://github.com/junegunn/fzf.vim'
-Plug 'https://github.com/nvim-telescope/telescope.nvim'
+" Plug 'https://github.com/nvim-telescope/telescope.nvim'
 " Plug 'https://github.com/glepnir/dashboard-nvim'
 " Plug 'liuchengxu/vim-clap'
 Plug 'https://github.com/jiangmiao/auto-pairs'
@@ -57,6 +57,7 @@ Plug 'https://github.com/honza/vim-snippets'
 Plug 'mhinz/vim-startify'
 Plug 'https://github.com/cj/vim-webdevicons'
 Plug 'https://github.com/pangloss/vim-javascript'
+Plug 'https://github.com/uiiaoo/java-syntax.vim'
 
 set encoding=UTF-8
 
@@ -119,4 +120,29 @@ let g:airline_symbols.linenr = ''
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 :nmap <space>e <Cmd>CocCommand explorer<CR>
 
-
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+exec "w"
+if &filetype == 'c'
+exec "!gcc % -o %<"
+exec "!time ./%<"
+elseif &filetype == 'cpp'
+exec "!g++ % -o %<"
+exec "!time ./%<"
+elseif &filetype == 'java'
+exec "!javac %"
+exec "!time java -cp %:p:h %:t:r"
+elseif &filetype == 'sh'
+exec "!time bash %"
+elseif &filetype == 'python'
+exec "!time python2.7 %"
+elseif &filetype == 'html'
+exec "!firefox % &"
+elseif &filetype == 'go'
+exec "!go build %<"
+exec "!time go run %"
+elseif &filetype == 'mkd'
+exec "!~/.vim/markdown.pl % > %.html &"
+exec "!firefox %.html &"
+endif
+endfunc
