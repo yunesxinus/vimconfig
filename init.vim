@@ -5,10 +5,6 @@
 :set smarttab
 :set softtabstop=4
 :set mouse=a
-" tabstop:          Width of tab character
-" softtabstop:      Fine tunes the amount of white space to be added
-" shiftwidth        Determines the amount of whitespace to add in normal mode
-" expandtab:        When this option is enabled, vi will use spaces instead of tabs
 set tabstop     =4
 set softtabstop =4
 set shiftwidth  =4
@@ -27,18 +23,18 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'turbio/bracey.vim'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'https://github.com/vim-airline/vim-airline' " Status bar
-Plug 'https://github.com/preservim/nerdtree' " NerdTree
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/preservim/nerdtree'
 Plug 'thaerkh/vim-indentguides'
-" Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw
-Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
-Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
-" Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
-Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
-Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
-Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
-Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
+" Plug 'http://github.com/tpope/vim-surround'
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/ap/vim-css-color'
+" Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'https://github.com/tc50cal/vim-terminal' "
+Plug 'https://github.com/terryma/vim-multiple-cursors' "
+Plug 'https://github.com/preservim/tagbar' 
+Plug 'https://github.com/neoclide/coc.nvim'
 Plug 'dracula/vim'
 " Plug 'mattn/vim-fz'
 " Plug 'https://github.com/junegunn/fzf.vim'
