@@ -18,7 +18,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-;> <C-w>l
 
-
+6y7WOx216JZDl8X1
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'turbio/bracey.vim'
